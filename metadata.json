@@ -1,0 +1,6 @@
+{
+  "name": "(주)좋은여행사 - GOOD TOUR",
+  "description": "B2B 기업 업무 출장, 상용 항공권 및 비자 원스톱 대행, MICE 학회·기업 연수, 맞춤형 테마여행 전문 (주)좋은여행사 (GOOD TOUR) 공식 웹사이트",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
