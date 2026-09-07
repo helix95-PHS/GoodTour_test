@@ -22,15 +22,15 @@ export const LocationsSection: React.FC = () => {
             <span>Locations & Global Network</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            본사 및 <span className="text-[#0f3b5c]">국내외 지사 안내</span>
+            본사 및 <span className="text-[#0f3b5c]">국외 지사 안내</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            서울 본사를 중심으로 부산 지사 및 베트남 다낭 현지 직영망을 통해 빈틈없는 고객 서비스를 제공합니다.
+            서울 본사를 중심으로 베트남 다낭 현지 직영망을 통해 빈틈없는 고객 서비스를 제공합니다.
           </p>
         </div>
 
-        {/* 3 Offices Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Offices Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {COMPANY_INFO.branches.map((branch) => {
             const isCopied = copiedId === branch.id;
             const isHeadOffice = branch.id === 'seoul';

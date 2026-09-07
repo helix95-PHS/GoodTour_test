@@ -81,7 +81,7 @@ export const CompanyOverview: React.FC = () => {
 
             <div className="mt-8 pt-5 border-t border-slate-200 text-xs text-slate-500 flex items-center justify-between">
               <span>관광사업 등록업체 (국내·국외여행업)</span>
-              <span className="font-semibold text-emerald-700">공식 파트너십 보유</span>
+              <span className="font-semibold text-emerald-700">파트너십 보유</span>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ export const CompanyOverview: React.FC = () => {
                     03. 글로벌 직영망과 안전 인프라
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    서울 본사, 부산 지사 및 베트남 다낭 현지 지사를 직접 연결하여 현지 사정을 가장 잘 알고 신속하게 대응할 수 있는 안전한 글로벌 네트워크를 갖추고 있습니다.
+                    서울 본사 및 베트남 다낭 현지 지사를 직접 연결하여 현지 사정을 가장 잘 알고 신속하게 대응할 수 있는 안전한 글로벌 네트워크를 갖추고 있습니다.
                   </p>
                 </div>
               </div>

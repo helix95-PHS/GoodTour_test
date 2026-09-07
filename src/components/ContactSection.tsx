@@ -74,7 +74,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block font-medium">대표 전화 문의</span>
+                    <span className="text-xs text-slate-400 block font-medium">대표 전화</span>
                     <span className="text-base sm:text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">
                       {COMPANY_INFO.headOffice.tel}
                     </span>
@@ -89,7 +89,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block font-medium">공식 문의 이메일</span>
+                    <span className="text-xs text-slate-400 block font-medium">이메일</span>
                     <span className="text-sm sm:text-base font-bold text-white group-hover:text-blue-300 transition-colors break-all">
                       {COMPANY_INFO.headOffice.email}
                     </span>
@@ -101,7 +101,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 block font-medium">본사 소재지</span>
+                    <span className="text-xs text-slate-400 block font-medium">본사 주소</span>
                     <span className="text-xs sm:text-sm text-slate-200">
                       {COMPANY_INFO.headOffice.address}
                     </span>
@@ -212,9 +212,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                     className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                   >
-                    <option value="B2B 기업 업무 출장 & 상용 항공권">B2B 기업 업무 출장 & 상용 항공권</option>
+                    <option value="기업 업무 출장 원스톱 서비스 (항공·호텔·렌터카 통합)">기업 업무 출장 원스톱 서비스 (항공 · 호텔 · 렌터카 통합 솔루션)</option>
                     <option value="국가별 상용·전자 비자 신속 대행">국가별 상용·전자 비자 신속 대행 (미국/중국/베트남 등)</option>
                     <option value="전세계 항공권 수배 (스카이팀·스타얼라이언스)">전세계 항공권 수배 (스카이팀·스타얼라이언스)</option>
+                    <option value="전 세계 호텔 예약 & 비즈니스 법인 특가">전 세계 호텔 예약 & 비즈니스 법인 특가</option>
+                    <option value="글로벌 렌터카 예약 & 모빌리티 (Avis, Hertz)">글로벌 렌터카 예약 & 모빌리티 (Avis, Hertz)</option>
                     <option value="MICE 및 해외학회/심포지엄 투어">MICE 및 해외학회/심포지엄 투어</option>
                     <option value="패키지 여행 (하나·모두·한진·롯데 제휴)">패키지 여행 (하나·모두·한진·롯데 제휴)</option>
                     <option value="기업 인센티브 투어 & 맞춤 워크샵">기업 인센티브 투어 & 맞춤 워크샵</option>

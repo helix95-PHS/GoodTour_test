@@ -17,7 +17,8 @@ import {
   FileText,
   Hotel,
   Luggage,
-  Layers
+  Layers,
+  Car
 } from 'lucide-react';
 import { B2B_SERVICES, VISA_SERVICES, B2B_CORPORATE_BENEFITS } from '../data/companyData';
 import planeImg from '../assets/images/b2b_airplane_flight_1788309424901.jpg';
@@ -31,37 +32,37 @@ const OMNIBUS_TRAVEL_STEPS = [
     id: 'flight',
     tag: '항공권 출도착',
     title: '전세계 항공권 수배',
-    desc: '상용 노선 실시간 발권',
+    desc: '스카이팀·스타얼라이언스',
     icon: PlaneTakeoff,
     image: planeImg,
     alt: '비즈니스 항공기 출도착 및 비행'
   },
   {
-    id: 'visa',
-    tag: '비자 신속 발급',
-    title: '상용·전자 비자 대행',
-    desc: '여권 사증 & 공식 스탬프 승인',
-    icon: FileCheck,
-    image: passportVisaImg,
-    alt: '세계 지도 위 펼쳐진 여권과 입국 사증 및 출입국 도장'
-  },
-  {
-    id: 'airport',
-    tag: '공항 출국 수속',
-    title: '패스트트랙 & 보딩',
-    desc: '탑승 수속 및 라운지 연계',
-    icon: Luggage,
-    image: airportImg,
-    alt: '국제공항 출국 탑승 수속 및 비즈니스 출장'
-  },
-  {
     id: 'hotel',
-    tag: '호텔 체크인',
+    tag: '전세계 호텔 예약',
     title: '특급 비즈니스 호텔',
-    desc: '행사장 인접 숙소 예약',
+    desc: '도심·전시장 인접 법인 특가',
     icon: Hotel,
     image: hotelImg,
     alt: '해외 특급 비즈니스 호텔 룸 및 체크인'
+  },
+  {
+    id: 'car',
+    tag: '렌터카 & 모빌리티',
+    title: '글로벌 렌터카 예약',
+    desc: 'Avis, Hertz 등 공항 픽업',
+    icon: Car,
+    image: airportImg,
+    alt: '국제공항 및 글로벌 렌터카 의전 차량'
+  },
+  {
+    id: 'visa',
+    tag: '비자 신속 발급',
+    title: '상용·전자 비자 대행',
+    desc: 'ESTA·중국/베트남 상용',
+    icon: FileCheck,
+    image: passportVisaImg,
+    alt: '세계 지도 위 펼쳐진 여권과 입국 사증 및 출입국 도장'
   }
 ];
 
@@ -90,11 +91,11 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
             <span>B2B Corporate Travel & Visa Center</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white mb-4">
-            기업 업무 출장과 상용 비자를 한번에, <br className="hidden sm:inline" />
-            <span className="text-emerald-400">좋은여행사 B2B 전담 솔루션</span>
+            기업 업무 출장 원스톱 서비스 <br className="hidden sm:inline" />
+            <span className="text-emerald-400">항공 · 호텔 · 렌터카 통합 솔루션</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            복잡한 출장 규정, 까다로운 입국 비자, 시시각각 변하는 비행 스케줄과 법인 정산까지 — <br className="hidden md:inline" />
+            복잡한 출장 항공권, 전 세계 호텔 예약, Avis·Hertz 렌터카, 까다로운 상용 비자 발급과 법인 정산까지 — <br className="hidden md:inline" />
             28년 노하우의 법인 전담 매니저가 귀사 임직원의 출장을 처음부터 끝까지 원스톱으로 책임집니다.
           </p>
         </div>
@@ -112,9 +113,9 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
             >
               <PlaneTakeoff className="w-4 h-4 shrink-0" />
               <span className="text-center leading-tight">
-                기업 업무 출장
+                기업 업무 출장 원스톱 서비스
                 <br />
-                <span className="text-[11px] sm:text-xs font-normal opacity-90">(전세계 항공권 매니지먼트)</span>
+                <span className="text-[11px] sm:text-xs font-normal opacity-90">(항공 · 호텔 · 렌터카 통합 솔루션)</span>
               </span>
             </button>
             <button
@@ -154,7 +155,7 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
                     <span>해외 출장 원스톱 여정 옴니버스</span>
                   </div>
                   <span className="text-[10px] text-slate-400 font-medium hidden sm:inline">
-                    항공 · 비자 · 공항 · 호텔
+                    항공 · 호텔 · 렌터카 · 비자
                   </span>
                 </div>
 
@@ -212,7 +213,7 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     28년 법인 출장 전담 1:1 케어
                   </span>
-                  <span className="text-[10px] text-emerald-400/90 font-medium">실시간 통합 수배</span>
+                  <span className="text-[10px] text-emerald-400/90 font-medium">항공 · 호텔 · 렌터카 통합 솔루션</span>
                 </div>
               </div>
 
@@ -223,26 +224,40 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
                     <span>Corporate Travel Specialist</span>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
-                    기업의 시간과 비용을 아끼는 스마트 출장 파트너
+                    항공 · 호텔 · 렌터카 통합 출장 솔루션
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                    스카이팀(대한항공, 델타 등), 스타얼라이언스(아시아나, 유나이티드 등)의 상용 노선 블록을 활용하여 출장 임직원에게 가장 유리한 비즈니스 스케줄을 제시합니다.
-                    갑작스러운 미팅 연기나 일정 변경 시에도 신속한 재발권과 24시간 긴급 지원으로 업무 공백을 방지합니다.
+                    스카이팀·스타얼라이언스 상용 항공권 수배부터 전 세계 특급 비즈니스 호텔 예약, Avis·Hertz 등 글로벌 렌터카 수배까지 출장 전 일정을 하나로 묶어 원스톱으로 지원합니다.
+                    갑작스러운 미팅 연기나 일정 변경 시에도 24시간 긴급 지원과 신속한 재발권으로 업무 공백을 방지합니다.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                     <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-700/60 flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       <div>
-                        <span className="text-xs font-bold text-white block">법인 우대 운임 및 좌석 배정</span>
-                        <span className="text-[11px] text-slate-400">사전 좌석 지정, 수하물 규정 안내 및 마일리지 적립</span>
+                        <span className="text-xs font-bold text-white block">전세계 항공권 & 호텔 통합 수배</span>
+                        <span className="text-[11px] text-slate-400">상용 노선 우대 운임, 좌석 배정 및 전시장 인접 특급 호텔 예약</span>
+                      </div>
+                    </div>
+                    <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-700/60 flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-xs font-bold text-white block">글로벌 렌터카 (Avis, Hertz) & 의전</span>
+                        <span className="text-[11px] text-slate-400">해외 공항 픽업/반납 렌터카 예약 및 VIP 전용 차량 연계</span>
+                      </div>
+                    </div>
+                    <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-700/60 flex items-start gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="text-xs font-bold text-white block">각국 상용 비자 신속 발급</span>
+                        <span className="text-[11px] text-slate-400">미국 ESTA, 중국·베트남 상용비자 등 서류 정밀 검토 및 대행</span>
                       </div>
                     </div>
                     <div className="bg-slate-900/70 p-3 rounded-xl border border-slate-700/60 flex items-start gap-2.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       <div>
                         <span className="text-xs font-bold text-white block">투명한 세금계산서 & 후불 정산</span>
-                        <span className="text-[11px] text-slate-400">출장 품의서용 비교 견적서 및 영수증 증빙 원클릭 제공</span>
+                        <span className="text-[11px] text-slate-400">항공·호텔·렌터카 일괄 정산 및 품의서용 증빙 원클릭 제공</span>
                       </div>
                     </div>
                   </div>
@@ -253,7 +268,7 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
                     전담 기업 등록 시 상시 우선 발권 및 할인 혜택 제공
                   </span>
                   <button
-                    onClick={() => onOpenContact('B2B 기업 업무 출장 & 항공권')}
+                    onClick={() => onOpenContact('기업 업무 출장 원스톱 서비스 (항공·호텔·렌터카 통합)')}
                     className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors cursor-pointer"
                   >
                     <span>출장 견적 및 제휴 문의</span>
@@ -267,10 +282,10 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
             <div>
               <div className="text-center mb-6">
                 <h4 className="text-lg font-bold text-white">
-                  좋은여행사 B2B 업무 출장 원스톱 프로세스
+                  좋은여행사 기업 업무 출장 원스톱 프로세스
                 </h4>
                 <p className="text-xs text-slate-400 mt-1">
-                  견적 요청부터 출장 완료 정산서 발급까지 5단계 체계적 관리
+                  항공·호텔·렌터카 견적부터 출장 완료 정산서 발급까지 5단계 체계적 관리
                 </p>
               </div>
 

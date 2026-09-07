@@ -5,6 +5,8 @@ import themeTourImg from '../assets/images/custom_theme_tour_1788266590067.jpg';
 import b2bBusinessImg from '../assets/images/b2b_business_travel_1788267449453.jpg';
 import packageTourImg from '../assets/images/package_travel_tour_1788269669263.jpg';
 import corporateIncentiveImg from '../assets/images/corporate_incentive_tour_1788269689586.jpg';
+import hotelImg from '../assets/images/hotel_business_executive_1788309452067.jpg';
+import rentalCarImg from '../assets/images/business_rental_car_1788744006957.jpg';
 
 export const COMPANY_INFO: CompanyInfo = {
   nameKr: '좋은여행사',
@@ -27,14 +29,6 @@ export const COMPANY_INFO: CompanyInfo = {
       tag: '본사',
     },
     {
-      id: 'busan',
-      name: '부산 지사 (Busan Branch)',
-      role: '영남권 기업 및 공공기관 출장·MICE 지원',
-      address: '부산광역시 연제구 토곡로 40, 좋은빌딩',
-      description: '영남권 기업 고객사를 위한 1:1 전담 출장 배정, 항공권/비자/호텔 원스톱 케어',
-      tag: '지사',
-    },
-    {
       id: 'danang',
       name: '베트남 다낭 지사 (Da Nang Global Office)',
       role: '동남아 현지 출장 지원 & 직영 오퍼레이션',
@@ -48,17 +42,20 @@ export const COMPANY_INFO: CompanyInfo = {
 export const CORE_SERVICES: ServiceItem[] = [
   {
     id: 'b2b-corporate',
-    title: '기업 업무 출장 (전세계 항공권 매니지먼트)',
-    subtitle: '법인 항공권 수배부터 국가별 비자 발급, 사후 정산까지 전담 케어',
-    category: 'B2B Corporate Travel & Visa',
-    badge: 'B2B 핵심 역량',
+    title: '기업 업무 출장 원스톱 서비스 (항공 · 호텔 · 렌터카 통합 솔루션)',
+    subtitle: '항공권 수배부터 전 세계 호텔, 글로벌 렌터카(Avis, Hertz), 비자 대행까지 통합 관리',
+    category: 'B2B Corporate Travel & All-in-One Solution',
+    badge: '항공·호텔·렌터카 통합 솔루션',
     description:
-      '글로벌 비즈니스의 성공을 위해 기업 임직원 업무 출장 전담 매니저를 1:1로 배정합니다. 스카이팀·스타얼라이언스 등 최적의 비즈니스 항공 스케줄 수배, 각국 상용·전자 비자 신속 발급, 긴급 일정 변경 대응 및 법인 세금계산서 일괄 정산 솔루션을 제공합니다.',
+      '글로벌 비즈니스의 성공을 위해 기업 임직원 업무 출장 전담 매니저를 1:1로 배정합니다. 스카이팀·스타얼라이언스 등 최적의 비즈니스 항공 스케줄 수배, 전 세계 특급 및 비즈니스 호텔 예약, 글로벌 렌터카(Avis, Hertz 등) 예약, 각국 상용·전자 비자 신속 발급, 긴급 일정 변경 대응 및 법인 세금계산서 일괄 정산 솔루션을 제공합니다.',
     highlights: [
-      '전세계 기업 상용 항공권 최적 노선 수배 및 좌석 블록 사전 확보',
+      '항공 · 호텔 · 렌터카 통합 솔루션: 출장 일정과 예산에 맞춘 원스톱 수배 및 맞춤 견적',
+      '전 세계 호텔 예약: 전시장 및 업무 지구 인접 3~5성급 특급 비즈니스 호텔 법인 우대 예약',
+      '글로벌 렌터카(Avis, Hertz 등) 예약: 전세계 주요 공항 및 도심 픽업/반납, 기사 포함 VIP 의전 차량 연계',
+      '스카이팀·스타얼라이언스 전세계 기업 상용 항공권 최적 노선 및 좌석 우선 확보',
       '미국(ESTA), 캐나다(eTA), 호주(ETA), 중국/베트남 상용비자 등 각국 비자 원스톱 대행',
       '기업 출장 전담 매니저 1:1 배정 & 24시간 긴급 일정 변경/재발권 지원',
-      '법인 후불 정산, 부가세 세금계산서 발행 및 출장비 항목별 상세 리포트 제공',
+      '법인 후불 정산, 부가세 세금계산서 일괄 발행 및 출장비 항목별 상세 리포트 제공',
     ],
     imageSrc: b2bBusinessImg,
   },
@@ -77,6 +74,40 @@ export const CORE_SERVICES: ServiceItem[] = [
       '28년 경력 베테랑 항공 발권 전문가의 1:1 맞춤 견적 및 케어',
     ],
     imageSrc: heroBanner,
+  },
+  {
+    id: 'hotel-booking',
+    title: '전 세계 호텔 예약 & 비즈니스 법인 특가',
+    subtitle: '메리어트·힐튼 등 글로벌 체인 및 전시장 인접 3~5성급 특급 호텔 법인 우대',
+    category: 'Global Hotel & Corporate Rates',
+    badge: '전 세계 호텔',
+    description:
+      '메리어트, 힐튼, 하얏트, 아코르 등 글로벌 체인 호텔부터 전시장 및 컨벤션 센터 인근 비즈니스 호텔까지 출장자의 동선과 기업 출장 규정에 맞춘 최적의 숙소를 법인 우대 요금으로 신속 예약해 드립니다.',
+    highlights: [
+      '전 세계 주요 도시 3~5성급 특급 및 비즈니스 호텔 법인 제휴 특가 수배',
+      '해외 학회·박람회장(MICE) 및 주요 비즈니스 중심가 인접 최적 입지 호텔 추천',
+      '조식 포함, 룸 업그레이드, 얼리 체크인/레이트 체크아웃 등 부가 혜택 연계',
+      '출장 일정 변경 시 수수료 최소화 및 간편한 취소/환불 지원',
+      '법인 후불 정산 및 전자세금계산서 일괄 합산 발행',
+    ],
+    imageSrc: hotelImg,
+  },
+  {
+    id: 'car-rental',
+    title: '글로벌 렌터카 예약 & 모빌리티 (Avis, Hertz)',
+    subtitle: 'Avis, Hertz, Enterprise 등 전세계 주요 공항 픽업 및 VIP 전용 의전 차량 연계',
+    category: 'Global Car Rental & Mobility',
+    badge: '글로벌 렌터카',
+    description:
+      '해외 출장지 도착 즉시 공항 또는 도심 지점에서 편리하게 차량을 픽업할 수 있도록 Avis, Hertz 등 글로벌 1위 렌터카 브랜드를 법인 할인 요금으로 예약해 드리며, 기사 포함 VIP 전용 의전 차량 수배도 함께 지원합니다.',
+    highlights: [
+      '글로벌 메이저 렌터카(Avis, Hertz, Enterprise 등) 실시간 비교 및 예약',
+      '전세계 국제공항 및 주요 도심 지점 편리한 픽업/반납 서비스',
+      '완전 면책 보험(CDW/LDW/PAI) 포함 안심 패키지 및 한국어 내비게이션 옵션',
+      '중요 바이어 미팅 및 임원 출장용 전문 기사 포함 VIP 전용 의전 차량 연계',
+      '항공·호텔과 묶은 원스톱 통합 예약 및 기업 세금계산서 일괄 발행',
+    ],
+    imageSrc: rentalCarImg,
   },
   {
     id: 'mice',
@@ -149,12 +180,12 @@ export const B2B_SERVICES = [
   {
     step: '01',
     title: '법인 전담 매니저 배정',
-    desc: '기업별 전담 담당자가 배정되어 임직원 출장 규정 및 선호 항공/호텔에 맞춘 최적의 여정을 제안합니다.',
+    desc: '기업별 전담 담당자가 배정되어 임직원 출장 규정 및 선호 항공/호텔/렌터카에 맞춘 최적의 여정을 제안합니다.',
   },
   {
     step: '02',
-    title: '상용 항공권 & 호텔 예약',
-    desc: '스카이팀·스타얼라이언스 전세계 네트워크를 활용하여 합리적인 운임과 유연한 스케줄 좌석을 우선 확보합니다.',
+    title: '항공 + 호텔 + 렌터카 원스톱 수배',
+    desc: '최적 항공 스케줄, 전 세계 비즈니스 호텔, Avis·Hertz 등 글로벌 렌터카 및 픽업 차량을 한 번에 통합 수배합니다.',
   },
   {
     step: '03',
@@ -163,13 +194,13 @@ export const B2B_SERVICES = [
   },
   {
     step: '04',
-    title: '현지 의전 & 통역/차량 연계',
-    desc: '해외 바이어 미팅, 공항 픽업 전용 차량, 현지 통역원 섭외 등 출장 현장에서 필요한 의전 인프라를 지원합니다.',
+    title: '현지 의전 & 모빌리티/통역 연계',
+    desc: 'Avis·Hertz 렌터카 공항 수령, VIP 전용 의전 차량 및 현지 통역원 섭외 등 출장 현장 인프라를 완벽히 지원합니다.',
   },
   {
     step: '05',
     title: '법인 맞춤 정산 & 리포트',
-    desc: '세금계산서 일괄 발행, 월 단위 후불 결제 및 출장비 항목별 상세 정산 내역서를 제공하여 행정 업무를 줄여드립니다.',
+    desc: '항공·호텔·렌터카 비용을 묶은 통합 세금계산서 발행 및 항목별 상세 정산 리포트로 경영지원 행정을 최소화합니다.',
   },
 ];
 
@@ -208,10 +239,10 @@ export const VISA_SERVICES: VisaServiceItem[] = [
 
 export const B2B_CORPORATE_BENEFITS: B2BBenefit[] = [
   {
-    badge: 'Time Saving',
-    title: '출장 준비 시간 80% 단축',
-    subtitle: '항공·호텔·비자·보험을 원스톱으로',
-    description: '여러 사이트를 비교할 필요 없이, 목적지와 일정만 전달하시면 최적의 비교 견적과 비자 발급까지 일괄 처리해 드립니다.',
+    badge: 'Integrated Solution',
+    title: '항공 · 호텔 · 렌터카 통합 솔루션',
+    subtitle: '출장 준비 시간 80% 단축 원스톱 케어',
+    description: '여러 사이트를 번거롭게 비교할 필요 없이, 항공권·전 세계 호텔·글로벌 렌터카(Avis, Hertz)·비자까지 전문 매니저가 일괄 비교·수배해 드립니다.',
   },
   {
     badge: 'Flexibility',
@@ -287,9 +318,9 @@ export const COMPANY_HIGHLIGHTS = [
     desc: '의학 학술대회, 글로벌 박람회 및 기업 목적에 최적화된 원스톱 의전 서비스',
   },
   {
-    number: '3개 거점',
+    number: '글로벌',
     unit: '네트워크',
-    label: '서울 본사 · 부산 · 베트남 다낭 지사',
-    desc: '국내외 핵심 거점을 잇는 촘촘한 현지 관리 체계와 긴급 지원 시스템',
+    label: '서울 본사 · 베트남 다낭 지사',
+    desc: '국외 핵심 거점을 잇는 촘촘한 현지 관리 체계와 긴급 지원 시스템',
   },
 ];

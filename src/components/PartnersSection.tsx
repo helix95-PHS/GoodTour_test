@@ -13,10 +13,10 @@ export const PartnersSection: React.FC = () => {
             <span>Global Alliances & Partners</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            전세계 항공사 및 대형 여행사 <span className="text-[#0f3b5c]">공식 파트너십</span>
+            전세계 항공사 및 대형 여행사 <span className="text-[#0f3b5c]">파트너십</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600">
-            글로벌 항공 얼라이언스 및 국내 최고 여행사들과의 공식 제휴를 통해 최상의 조건과 안전한 여정을 보장합니다.
+            글로벌 항공 얼라이언스 및 국내 최고 여행사들과의 제휴를 통해 최상의 조건과 안전한 여정을 보장합니다.
           </p>
         </div>
 
@@ -25,7 +25,7 @@ export const PartnersSection: React.FC = () => {
           <div className="flex items-center gap-2 mb-4">
             <Handshake className="w-4 h-4 text-emerald-600" />
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide">
-              주요 패키지 공식 제휴사
+              주요 패키지 제휴사
             </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

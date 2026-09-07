@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Briefcase, CheckCircle2, ChevronRight, Sparkles, Building, Plane, Luggage, Award, Compass } from 'lucide-react';
+import { Briefcase, CheckCircle2, ChevronRight, Sparkles, Building, Plane, Luggage, Award, Compass, Hotel, Car } from 'lucide-react';
 import { CORE_SERVICES } from '../data/companyData';
 import { ServiceItem } from '../types';
 
@@ -16,19 +16,23 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
   const getServiceIcon = (id: string) => {
     switch (id) {
       case 'b2b-corporate':
-        return <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Briefcase className="w-5 h-5" />;
       case 'flight-package':
-        return <Plane className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Plane className="w-5 h-5" />;
+      case 'hotel-booking':
+        return <Hotel className="w-5 h-5" />;
+      case 'car-rental':
+        return <Car className="w-5 h-5" />;
       case 'mice':
-        return <Building className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Building className="w-5 h-5" />;
       case 'package-tour':
-        return <Luggage className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Luggage className="w-5 h-5" />;
       case 'corporate-incentive':
-        return <Award className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Award className="w-5 h-5" />;
       case 'theme':
-        return <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Sparkles className="w-5 h-5" />;
       default:
-        return <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />;
+        return <Briefcase className="w-5 h-5" />;
     }
   };
 
@@ -38,6 +42,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return '기업 업무 출장';
       case 'flight-package':
         return '전세계 항공권';
+      case 'hotel-booking':
+        return '호텔 예약';
+      case 'car-rental':
+        return '렌터카 예약';
       case 'mice':
         return 'MICE & 학회';
       case 'package-tour':
@@ -64,37 +72,45 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             좋은여행사만의 <span className="text-[#1e824c]">핵심 업무 및 특화 사업</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            B2B 기업 출장 & 비자 대행부터 전세계 항공권, MICE 학회, 패키지 여행, 기업 인센티브, 시그니처 테마여행까지 <br className="hidden sm:inline" />
+            B2B 기업 출장 & 비자부터 전세계 항공권, 호텔 및 렌터카 예약, MICE 학회, 패키지 여행, 기업 인센티브, 시그니처 테마여행까지 <br className="hidden sm:inline" />
             원스톱으로 제공합니다.
           </p>
         </div>
 
-        {/* Tab Selection Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 max-w-6xl mx-auto mb-10">
+        {/* Tab Selection Bar: 4 per row, 2 rows total with comfortable enlarged sizing */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 max-w-6xl mx-auto mb-12">
           {CORE_SERVICES.map((service) => {
             const isSelected = service.id === selectedServiceId;
             return (
               <button
                 key={service.id}
                 onClick={() => setSelectedServiceId(service.id)}
-                className={`flex items-center gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl text-left transition-all border cursor-pointer ${
+                className={`flex items-center gap-3 sm:gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-left transition-all border cursor-pointer ${
                   isSelected
-                    ? 'bg-[#0f3b5c] text-white border-[#0f3b5c] shadow-sm font-semibold'
-                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-100/60 font-medium'
+                    ? 'bg-[#0f3b5c] text-white border-[#0f3b5c] shadow-md ring-2 ring-[#0f3b5c]/20 font-semibold'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50/80 hover:shadow-xs font-medium'
                 }`}
               >
                 <div
-                  className={`p-1.5 sm:p-2 rounded-lg shrink-0 ${
+                  className={`p-2 sm:p-2.5 rounded-xl shrink-0 transition-colors ${
                     isSelected ? 'bg-white/10 text-emerald-400' : 'bg-slate-100 text-slate-600'
                   }`}
                 >
                   {getServiceIcon(service.id)}
                 </div>
-                <div className="overflow-hidden min-w-0">
-                  <div className="text-[10px] sm:text-[11px] text-slate-400 font-normal truncate">
-                    {service.id === 'b2b-corporate' ? '(전세계 항공권 매니지먼트)' : service.badge}
+                <div className="overflow-hidden min-w-0 flex-1">
+                  <div
+                    className={`text-[11px] sm:text-xs font-medium truncate mb-0.5 ${
+                      isSelected ? 'text-emerald-300' : 'text-slate-400'
+                    }`}
+                  >
+                    {service.id === 'b2b-corporate' ? '통합 출장 솔루션' : service.badge}
                   </div>
-                  <div className="text-xs sm:text-sm font-bold truncate">
+                  <div
+                    className={`text-sm sm:text-base font-bold truncate tracking-tight ${
+                      isSelected ? 'text-white' : 'text-slate-900'
+                    }`}
+                  >
                     {getShortTabTitle(service)}
                   </div>
                 </div>
@@ -140,10 +156,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1 mb-2">
                   {activeService.id === 'b2b-corporate' ? (
                     <>
-                      <span>기업 업무 출장</span>{' '}
+                      <span>기업 업무 출장 원스톱 서비스</span>{' '}
                       <br className="hidden sm:inline" />
                       <span className="text-lg sm:text-xl text-[#0f3b5c] font-bold">
-                        (전세계 항공권 매니지먼트)
+                        (항공 · 호텔 · 렌터카 통합 솔루션)
                       </span>
                     </>
                   ) : (

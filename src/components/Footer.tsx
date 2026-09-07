@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
             <p>대표자: {COMPANY_INFO.ceo}</p>
             <p>설립연월일: {COMPANY_INFO.establishedDate}</p>
             <p className="text-[11px] text-slate-500 pt-1">
-              지사: 부산 사무소 · 베트남 다낭 현지 지사
+              해외 지사: 베트남 다낭 현지 직영 지사
             </p>
           </div>
         </div>

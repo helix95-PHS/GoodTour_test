@@ -42,7 +42,7 @@ export default function App() {
       {/* Main Content Sections */}
       <main className="flex-1">
         <Hero
-          onOpenContact={() => scrollToContact('B2B 기업 업무 출장 & 상용 항공권')}
+          onOpenContact={() => scrollToContact('기업 업무 출장 원스톱 서비스 (항공·호텔·렌터카 통합)')}
           onExploreServices={scrollToServices}
         />
         <CompanyOverview />
