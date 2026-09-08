@@ -95,8 +95,8 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
             <span className="text-emerald-400">항공 · 호텔 · 렌터카 통합 솔루션</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            복잡한 출장 항공권, 전 세계 호텔 예약, Avis·Hertz 렌터카, 까다로운 상용 비자 발급과 법인 정산까지 — <br className="hidden md:inline" />
-            28년 노하우의 법인 전담 매니저가 귀사 임직원의 출장을 처음부터 끝까지 원스톱으로 책임집니다.
+            복잡한 출장 항공권, 전 세계 호텔 예약, Avis·Hertz 렌터카, 까다로운 상용 비자 발급과 법인 정산까지, <br className="hidden md:inline" />
+            30년 노하우의 법인 전담 매니저가 귀사 임직원의 출장을 처음부터 끝까지 원스톱으로 책임집니다.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export const B2BCorporateSection: React.FC<B2BCorporateSectionProps> = ({ onOpen
                 <div className="mt-2.5 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 px-1">
                   <span className="flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    28년 법인 출장 전담 1:1 케어
+                    30년 법인 출장 전담 1:1 케어
                   </span>
                   <span className="text-[10px] text-emerald-400/90 font-medium">항공 · 호텔 · 렌터카 통합 솔루션</span>
                 </div>

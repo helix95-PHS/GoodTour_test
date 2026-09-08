@@ -41,15 +41,15 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
       case 'b2b-corporate':
         return '기업 업무 출장';
       case 'flight-package':
-        return '전세계 항공권';
+        return '국내외 항공 예약 및 발권';
       case 'hotel-booking':
-        return '호텔 예약';
+        return '국내외 호텔 예약';
       case 'car-rental':
         return '렌터카 예약';
       case 'mice':
         return 'MICE & 학회';
       case 'package-tour':
-        return '패키지 여행';
+        return '국내외 패키지 여행';
       case 'corporate-incentive':
         return '기업 인센티브';
       case 'theme':
@@ -71,9 +71,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             좋은여행사만의 <span className="text-[#1e824c]">핵심 업무 및 특화 사업</span>
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            B2B 기업 출장 & 비자부터 전세계 항공권, 호텔 및 렌터카 예약, MICE 학회, 패키지 여행, 기업 인센티브, 시그니처 테마여행까지 <br className="hidden sm:inline" />
-            원스톱으로 제공합니다.
+          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed break-keep">
+            (주)좋은여행사는 B2B 기업 출장 &amp; 비자 대행부터 국내외 항공권 및 호텔 예약, MICE 학회, <br className="hidden sm:inline" />
+            국내외 패키지 여행 및 기업 인센티브, 시그니처 테마여행까지 원스톱으로 제공해 드립니다.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 >
                   {getServiceIcon(service.id)}
                 </div>
-                <div className="overflow-hidden min-w-0 flex-1">
+                <div className="overflow-hidden min-w-0 flex-1" title={getShortTabTitle(service)}>
                   <div
                     className={`text-[11px] sm:text-xs font-medium truncate mb-0.5 ${
                       isSelected ? 'text-emerald-300' : 'text-slate-400'
@@ -107,7 +107,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                     {service.id === 'b2b-corporate' ? '통합 출장 솔루션' : service.badge}
                   </div>
                   <div
-                    className={`text-sm sm:text-base font-bold truncate tracking-tight ${
+                    className={`text-[13px] sm:text-sm lg:text-[15px] font-bold truncate tracking-tight ${
                       isSelected ? 'text-white' : 'text-slate-900'
                     }`}
                   >

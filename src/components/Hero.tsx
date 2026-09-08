@@ -60,11 +60,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact, onExploreServices }) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-lg text-slate-200 leading-relaxed mb-8 max-w-2xl"
+            className="text-base sm:text-lg text-slate-200 leading-relaxed mb-8 max-w-3xl break-keep"
           >
-            <strong className="text-white font-semibold">(주)좋은여행사 (GOOD TOUR)</strong>는
-            B2B 기업 출장 & 비자 대행부터 전세계 항공권, MICE 학회, 패키지 여행, 기업 인센티브, 시그니처 테마여행까지 <br className="hidden sm:inline" />
-            원스톱으로 제공합니다.
+            <strong className="text-white font-semibold">(주)좋은여행사 (GOOD TOUR)</strong>는 B2B 기업 출장 &amp; 비자 대행부터 국내외 항공권 및 <br className="hidden sm:inline" />
+            호텔 예약, MICE 학회, 국내외 패키지 여행 및 기업 인센티브, 시그니처 테마여행까지 <br className="hidden sm:inline" />
+            원스톱으로 제공해 드립니다.
           </motion.p>
 
           {/* Action Buttons */}

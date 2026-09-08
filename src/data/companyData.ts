@@ -17,7 +17,7 @@ export const COMPANY_INFO: CompanyInfo = {
   headOffice: {
     address: '서울특별시 서초구 논현로31길 14, 일성빌딩 4층',
     tel: '02-451-1024',
-    email: 'goodtour1@naver.com',
+    email: 'partner@goodtour.best',
   },
   branches: [
     {
@@ -32,7 +32,7 @@ export const COMPANY_INFO: CompanyInfo = {
       id: 'danang',
       name: '베트남 다낭 지사 (Da Nang Global Office)',
       role: '동남아 현지 출장 지원 & 직영 오퍼레이션',
-      address: '405 Đ. Lê Văn Hiến, Hoà Hải, Ngũ Hành Sơn, Đà Nẵng 550000 Vietnam',
+      address: '514 Đ. Lê Văn Hiến, Ngũ Hành Sơn, Đà Nẵng 550000, Việt Nam',
       description: '동남아 비즈니스 출장자 현지 차량/통역 지원, 긴급 케어 및 현지 의전 네트워크',
       tag: '글로벌 지사',
     },
@@ -61,26 +61,26 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'flight-package',
-    title: '전세계 항공권 수배 & 항공 얼라이언스',
+    title: '국내외 항공 예약 및 발권 (스카이팀 · 스타얼라이언스)',
     subtitle: '스카이팀·스타얼라이언스 전세계 최적 운임 및 비즈니스 좌석 확보',
     category: 'Global Flight & Alliance',
-    badge: '전세계 항공권',
+    badge: '항공 발권 서비스',
     description:
       '대한항공(스카이팀), 아시아나항공(스타얼라이언스)을 비롯한 전세계 주요 항공사의 상용 할인 항공권을 신속하게 수배하고, 기업 출장자 및 여행객을 위한 최적의 스케줄과 합리적인 운임을 제공합니다.',
     highlights: [
       '스카이팀(SkyTeam) & 스타얼라이언스(Star Alliance) 전세계 할인항공권 수배',
       '기업 상용 고객을 위한 비즈니스/이코노미 블록 좌석 우선 확보',
       '출장 일정 변경, 구간 추가, 스톱오버 및 긴급 재발권 24시간 대응',
-      '28년 경력 베테랑 항공 발권 전문가의 1:1 맞춤 견적 및 케어',
+      '30년 경력 베테랑 항공 발권 전문가의 1:1 맞춤 견적 및 케어',
     ],
     imageSrc: heroBanner,
   },
   {
     id: 'hotel-booking',
-    title: '전 세계 호텔 예약 & 비즈니스 법인 특가',
+    title: '국내외 호텔 예약 & 비즈니스 법인 특가',
     subtitle: '메리어트·힐튼 등 글로벌 체인 및 전시장 인접 3~5성급 특급 호텔 법인 우대',
     category: 'Global Hotel & Corporate Rates',
-    badge: '전 세계 호텔',
+    badge: '호텔 예약 서비스',
     description:
       '메리어트, 힐튼, 하얏트, 아코르 등 글로벌 체인 호텔부터 전시장 및 컨벤션 센터 인근 비즈니스 호텔까지 출장자의 동선과 기업 출장 규정에 맞춘 최적의 숙소를 법인 우대 요금으로 신속 예약해 드립니다.',
     highlights: [
@@ -127,12 +127,12 @@ export const CORE_SERVICES: ServiceItem[] = [
   },
   {
     id: 'package-tour',
-    title: '패키지 여행 (하나·모두·한진·롯데 제휴)',
+    title: '국내외 패키지 여행 (하나·모두·한진·롯데 제휴)',
     subtitle: '대한민국 대표 메이저 여행사 공식 제휴 상품 맞춤 예약 및 혜택',
     category: 'Major Package Travel',
-    badge: '메이저 공식 제휴',
+    badge: '메이저 패키지사 제휴',
     description:
-      '하나투어, 모두투어, 한진관광, 롯데관광 등 대한민국 1등 대형 여행사들의 정품 패키지 상품을 공식 제휴가로 안내하며, 28년 여행 노하우로 고객 일정과 예산에 최적화된 상품을 비교·추천해 드립니다.',
+      '하나투어, 모두투어, 한진관광, 롯데관광 등 대한민국 1등 대형 여행사들의 정품 패키지 상품을 공식 제휴가로 안내하며, 30년 여행 노하우로 고객 일정과 예산에 최적화된 상품을 비교·추천해 드립니다.',
     highlights: [
       '하나투어, 모두투어, 한진관광, 롯데관광 공식 제휴 대리점',
       '전세계 프리미엄 패키지부터 실속형 패키지까지 실시간 비교 예약',
@@ -291,8 +291,8 @@ export const ALLIANCE_PARTNERS = {
     '터키항공 (Turkish Airlines)',
   ],
   majorAgencies: [
-    { name: '하나투어 (Hana Tour)', desc: '공식 인증 제휴 대리점' },
-    { name: '모두투어 (Mode Tour)', desc: '공식 인증 제휴 대리점' },
+    { name: '하나투어 (Hana Tour)', desc: '제휴 대리점' },
+    { name: '모두투어 (Mode Tour)', desc: '제휴 대리점' },
     { name: '롯데관광 (Lotte Tour)', desc: '프리미엄 패키지 파트너' },
     { name: '한진관광 (Hanjin Travel)', desc: '고품격 여행상품 파트너' },
   ],
@@ -306,7 +306,7 @@ export const COMPANY_HIGHLIGHTS = [
     desc: '임직원 상용 항공권 발권부터 국가별 비자, 호텔, 정산까지 원스톱 관리',
   },
   {
-    number: '28+',
+    number: '30+',
     unit: '년',
     label: '여행업 운영 및 기획 노하우',
     desc: '오랜 신뢰와 전문성을 바탕으로 안전하고 완성도 높은 여정을 만듭니다.',

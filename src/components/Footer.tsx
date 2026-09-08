@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              28년의 전문 운영 노하우와 고객 중심의 기획력으로 최상의 MICE, 해외학술대회, 특화 테마여행 및 글로벌 항공 서비스를 제공합니다.
+              30년의 전문 운영 노하우와 고객 중심의 기획력으로 최상의 MICE, 해외학술대회, 특화 테마여행 및 글로벌 항공 서비스를 제공합니다.
             </p>
             <div className="flex items-center gap-2 text-slate-300">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />

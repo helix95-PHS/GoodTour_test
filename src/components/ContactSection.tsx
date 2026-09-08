@@ -62,7 +62,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                 (주)좋은여행사 고객센터
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-8 leading-relaxed">
-                25년 이상의 고객상담 및 여행 기획 전문가가 친절하고 신속하게 맞춤 상담을 도와드립니다.
+                30년 이상의 고객상담 및 여행 기획 전문가가 친절하고 신속하게 맞춤 상담을 도와드립니다.
               </p>
 
               <div className="space-y-5">

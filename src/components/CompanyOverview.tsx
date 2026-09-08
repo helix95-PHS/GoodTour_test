@@ -18,8 +18,8 @@ export const CompanyOverview: React.FC = () => {
             <span className="text-[#0f3b5c]">(주)좋은여행사</span>를 소개합니다
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            (주)좋은여행사(GOOD TOUR)는 2013년 설립 이래, 28년 여행업 노하우를 가진 베테랑 인력들이 고객 중심의 <br className="hidden sm:inline" />
-            고품격 MICE, 특화 테마여행, 법인 및 개인 맞춤 솔루션을 원스톱으로 제공하고 있습니다.
+            (주)좋은여행사(GOOD TOUR)는 2013년 설립 이래, 30년 여행업 노하우를 가진 베테랑 인력들이 <br className="hidden sm:inline" />
+            고객 중심의 고품격 MICE, 특화 테마여행, 법인 및 개인 맞춤 솔루션을 원스톱으로 제공하고 있습니다.
           </p>
         </div>
 
@@ -55,7 +55,7 @@ export const CompanyOverview: React.FC = () => {
                   <User className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
                     <span className="font-semibold text-slate-700">대표이사: </span>
-                    <span className="text-slate-600">서진경 (고객상담 및 CS 25년 전문 경력)</span>
+                    <span className="text-slate-600">서진경 (고객상담 및 CS 30년 전문 경력)</span>
                   </div>
                 </div>
 
@@ -97,7 +97,7 @@ export const CompanyOverview: React.FC = () => {
                     01. 고객 만족과 믿음직한 여정
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    단순한 이동을 넘어, 다시 찾고 싶은 감동을 선사합니다. 28년간 축적된 여행사 운영 경험과 25년 CS 전문가의 섬세한 케어로 처음부터 끝까지 믿을 수 있는 서비스를 제공합니다.
+                    단순한 이동을 넘어, 다시 찾고 싶은 감동을 선사합니다. 30년간 축적된 여행사 운영 경험과 30년 CS 전문가의 섬세한 케어로 처음부터 끝까지 믿을 수 있는 서비스를 제공합니다.
                   </p>
                 </div>
               </div>
