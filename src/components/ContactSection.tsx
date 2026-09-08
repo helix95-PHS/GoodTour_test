@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Send, CheckCircle2, MessageSquare, Clock, MapPin, Building2 } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle2, MessageSquare, Clock, MapPin, Building2, Loader2, AlertCircle } from 'lucide-react';
 import { COMPANY_INFO } from '../data/companyData';
 
 interface ContactSectionProps {
@@ -17,14 +17,52 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/myeynqyn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          organization: formData.organization || '미기재',
+          phone: formData.phone,
+          email: formData.email,
+          serviceType: formData.serviceType,
+          message: formData.message || '상담 요청',
+          _subject: `[좋은여행사 상담신청] ${formData.name}님 (${formData.serviceType})`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json().catch(() => null);
+        const errorText =
+          data?.errors?.map((err: { message: string }) => err.message).join(', ') ||
+          '상담 신청 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주시거나 직통 전화(02-451-1024)로 문의 바랍니다.';
+        setErrorMessage(errorText);
+      }
+    } catch (err) {
+      console.error('Formspree submission error:', err);
+      setErrorMessage('네트워크 연결 문제로 전송에 실패했습니다. 잠시 후 다시 시도하시거나 대표번호(02-451-1024)로 연락해 주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     setFormData({
       name: '',
       organization: '',
@@ -139,78 +177,112 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                id="contact-consultation-form"
+                action="https://formspree.io/f/myeynqyn"
+                method="POST"
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
                 <h3 className="text-lg font-bold text-slate-900 pb-2 border-b border-slate-200">
                   온라인 상담 및 견적 신청서
                 </h3>
 
+                {errorMessage && (
+                  <div
+                    id="contact-form-error"
+                    className="p-3.5 rounded-lg bg-red-50 border border-red-200 flex items-start gap-2.5 text-xs text-red-700"
+                  >
+                    <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                    <div className="flex-1">
+                      <p className="font-semibold mb-0.5">상담 전송에 실패했습니다</p>
+                      <p>{errorMessage}</p>
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label htmlFor="contact-name" className="block text-xs font-semibold text-slate-700 mb-1">
                       담당자 성함 <span className="text-red-500">*</span>
                     </label>
                     <input
+                      id="contact-name"
+                      name="name"
                       type="text"
                       required
+                      disabled={isSubmitting}
                       placeholder="홍길동"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label htmlFor="contact-org" className="block text-xs font-semibold text-slate-700 mb-1">
                       소속 단체 / 기업명
                     </label>
                     <input
+                      id="contact-org"
+                      name="organization"
                       type="text"
+                      disabled={isSubmitting}
                       placeholder="학회명 또는 회사명"
                       value={formData.organization}
                       onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label htmlFor="contact-phone" className="block text-xs font-semibold text-slate-700 mb-1">
                       연락처 <span className="text-red-500">*</span>
                     </label>
                     <input
+                      id="contact-phone"
+                      name="phone"
                       type="tel"
                       required
+                      disabled={isSubmitting}
                       placeholder="010-0000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label htmlFor="contact-email" className="block text-xs font-semibold text-slate-700 mb-1">
                       이메일 주소 <span className="text-red-500">*</span>
                     </label>
                     <input
+                      id="contact-email"
+                      name="email"
                       type="email"
                       required
+                      disabled={isSubmitting}
                       placeholder="example@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  <label htmlFor="contact-service" className="block text-xs font-semibold text-slate-700 mb-1">
                     관심 분야 / 서비스 종류
                   </label>
                   <select
+                    id="contact-service"
+                    name="serviceType"
+                    disabled={isSubmitting}
                     value={formData.serviceType}
                     onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                   >
                     <option value="기업 업무 출장 원스톱 서비스 (항공·호텔·렌터카 통합)">기업 업무 출장 원스톱 서비스 (항공 · 호텔 · 렌터카 통합 솔루션)</option>
                     <option value="국가별 상용·전자 비자 신속 대행">국가별 상용·전자 비자 신속 대행 (미국/중국/베트남 등)</option>
@@ -225,24 +297,38 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1">
+                  <label htmlFor="contact-message" className="block text-xs font-semibold text-slate-700 mb-1">
                     문의 내용 (예상 인원, 일정, 희망 국가 등)
                   </label>
                   <textarea
+                    id="contact-message"
+                    name="message"
                     rows={4}
+                    disabled={isSubmitting}
                     placeholder="희망하시는 여행 일정, 인원 수, 목적(학회 참가, 테마 연수 등)을 자유롭게 적어주시면 더욱 정확한 견적을 안내해 드립니다."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors disabled:bg-slate-100 disabled:text-slate-500"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0f3b5c] hover:bg-[#0b2b44] text-white font-semibold py-3 px-6 rounded-lg shadow-sm transition-all active:scale-[0.99] cursor-pointer"
+                  id="contact-submit-btn"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0f3b5c] hover:bg-[#0b2b44] text-white font-semibold py-3 px-6 rounded-lg shadow-sm transition-all active:scale-[0.99] cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4 text-emerald-400" />
-                  <span>맞춤 상담 신청하기</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 text-emerald-400 animate-spin" />
+                      <span>상담 내용 전송 중...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 text-emerald-400" />
+                      <span>맞춤 상담 신청하기</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
