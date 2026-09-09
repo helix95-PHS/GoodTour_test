@@ -289,10 +289,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ prefilledService
                     <option value="전세계 항공권 수배 (스카이팀·스타얼라이언스)">전세계 항공권 수배 (스카이팀·스타얼라이언스)</option>
                     <option value="전 세계 호텔 예약 & 비즈니스 법인 특가">전 세계 호텔 예약 & 비즈니스 법인 특가</option>
                     <option value="글로벌 렌터카 예약 & 모빌리티 (Avis, Hertz)">글로벌 렌터카 예약 & 모빌리티 (Avis, Hertz)</option>
+                    <option value="장애인 국가대표 선수단 및 스포츠단 전담 케어">장애인 국가대표 선수단 및 스포츠단 전담 케어 (국제대회 & 전지훈련)</option>
                     <option value="MICE 및 해외학회/심포지엄 투어">MICE 및 해외학회/심포지엄 투어</option>
                     <option value="패키지 여행 (하나·모두·한진·롯데 제휴)">패키지 여행 (하나·모두·한진·롯데 제휴)</option>
-                    <option value="기업 인센티브 투어 & 맞춤 워크샵">기업 인센티브 투어 & 맞춤 워크샵</option>
-                    <option value="시그니처 테마여행 & 버킷리스트 50">시그니처 테마여행 & 버킷리스트 50</option>
+                    <option value="기업 인센티브 & 시그니처 테마여행">기업 인센티브 & 시그니처 테마여행 (맞춤 워크샵 · 테마 기행)</option>
                   </select>
                 </div>
 

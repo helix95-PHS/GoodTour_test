@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Briefcase, CheckCircle2, ChevronRight, Sparkles, Building, Plane, Luggage, Award, Compass, Hotel, Car } from 'lucide-react';
+import { Briefcase, CheckCircle2, ChevronRight, Sparkles, Building, Plane, Luggage, Award, Trophy, Hotel, Car } from 'lucide-react';
 import { CORE_SERVICES } from '../data/companyData';
 import { ServiceItem } from '../types';
 
@@ -27,10 +27,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return <Building className="w-5 h-5" />;
       case 'package-tour':
         return <Luggage className="w-5 h-5" />;
-      case 'corporate-incentive':
+      case 'incentive-theme':
         return <Award className="w-5 h-5" />;
-      case 'theme':
-        return <Sparkles className="w-5 h-5" />;
+      case 'sports-mobility':
+        return <Trophy className="w-5 h-5" />;
       default:
         return <Briefcase className="w-5 h-5" />;
     }
@@ -50,10 +50,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
         return 'MICE & 학회';
       case 'package-tour':
         return '국내외 패키지 여행';
-      case 'corporate-incentive':
-        return '기업 인센티브';
-      case 'theme':
-        return '시그니처 테마';
+      case 'incentive-theme':
+        return '기업 인센티브 & 테마';
+      case 'sports-mobility':
+        return '선수단 & 스포츠 케어';
       default:
         return service.title.split('&')[0].trim();
     }
@@ -72,8 +72,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             좋은여행사만의 <span className="text-[#1e824c]">핵심 업무 및 특화 사업</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed break-keep">
-            (주)좋은여행사는 B2B 기업 출장 &amp; 비자 대행부터 국내외 항공권 및 호텔 예약, MICE 학회, <br className="hidden sm:inline" />
-            국내외 패키지 여행 및 기업 인센티브, 시그니처 테마여행까지 원스톱으로 제공해 드립니다.
+            (주)좋은여행사는 B2B 기업 출장 &amp; 비자 대행부터 국내외 항공권 및 호텔 예약, 렌터카, <br className="hidden sm:inline" />
+            장애인 국가대표 스포츠 선수단 케어, MICE 학회, 국내외 패키지 및 기업 인센티브·테마여행까지 경쟁력 있는 원스톱 솔루션으로 제공해 드립니다.
           </p>
         </div>
 
@@ -150,8 +150,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
             {/* Content Col */}
             <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
               <div>
-                <span className="text-xs font-bold text-emerald-700 tracking-wider uppercase">
-                  {activeService.category}
+                <span className="text-xs font-bold text-emerald-700 tracking-wider uppercase inline-flex items-center gap-1.5">
+                  <span className="w-1 h-3.5 bg-emerald-600 rounded-full inline-block"></span>
+                  <span>{activeService.category}</span>
                 </span>
                 <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1 mb-2">
                   {activeService.id === 'b2b-corporate' ? (
@@ -185,7 +186,16 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                         className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-100"
                       >
                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{item}</span>
+                        <span className="leading-snug">
+                          {item.includes(': ') ? (
+                            <>
+                              <strong className="font-semibold text-slate-900">{item.split(': ')[0]}: </strong>
+                              <span>{item.split(': ').slice(1).join(': ')}</span>
+                            </>
+                          ) : (
+                            item
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>

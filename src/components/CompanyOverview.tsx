@@ -64,7 +64,7 @@ export const CompanyOverview: React.FC = () => {
                   <div>
                     <span className="font-semibold text-slate-700">주요 사업분야: </span>
                     <span className="text-slate-600 leading-snug">
-                      B2B 기업 출장 관리, 전세계 항공권 수배 및 국가별 비자 대행, 패키지 및 기업 인센티브 투어, 국내외 MICE 및 학회 투어, 맞춤 테마 여행 기획
+                      B2B 기업 출장 관리, 전세계 항공권 수배 및 비자 대행, 기업 인센티브 &amp; 테마투어, MICE 학회, 장애인 국가대표 선수단 및 스포츠단 전담 케어
                     </span>
                   </div>
                 </div>

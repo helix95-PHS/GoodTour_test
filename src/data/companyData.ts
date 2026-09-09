@@ -7,6 +7,7 @@ import packageTourImg from '../assets/images/package_travel_tour_1788269669263.j
 import corporateIncentiveImg from '../assets/images/corporate_incentive_tour_1788269689586.jpg';
 import hotelImg from '../assets/images/hotel_business_executive_1788309452067.jpg';
 import rentalCarImg from '../assets/images/business_rental_car_1788744006957.jpg';
+import sportsMobilityImg from '../assets/images/sports_special_mobility_1788918606815.jpg';
 
 export const COMPANY_INFO: CompanyInfo = {
   nameKr: '좋은여행사',
@@ -110,6 +111,24 @@ export const CORE_SERVICES: ServiceItem[] = [
     imageSrc: rentalCarImg,
   },
   {
+    id: 'sports-mobility',
+    title: '장애인 국가대표 선수단 및 스포츠단 전담 케어',
+    subtitle: '장애인 국가대표 선수단 국제대회 전담 케어 및 스포츠단 해외 전지훈련 운영',
+    category: 'Sports & Special Purpose Mobility',
+    badge: '선수단 & 스포츠 케어',
+    description:
+      '대한장애인테니스협회와 대한장애인펜싱협회의 장애인 선수단 국제대회 참석을 전담하고 있으며 스포츠토토 여자축구단, 스포츠토토 빙상단의 해외 전지훈련 다수 케어 이력이 있습니다.',
+    highlights: [
+      '장애인 국가대표 선수단 국제대회 참석: 배리어 프리(Barrier-Free) 호텔 및 이동 동선 사전 검증',
+      '특수 모빌리티 인프라: Wheelchair Accessible(휠체어 리프트) 차량 및 현지 이동 인프라 완벽 확보',
+      '특수 장비 안전 수송: 휠체어, 펜싱 장비 등 선수별 특수 장비의 안전한 기내/화물 수송 원스톱 수속',
+      '해외 전지훈련 케어: 선수단 항공권 수배 및 장기 체류 전지훈련지 맞춤 숙소, 전용 훈련장 & 셔틀 수배',
+      '오버사이즈 화물 전담: 스포츠 장비(축구 용품, 빙상 장비 등) 특수 수송 및 초과 수하물 신속 수속',
+      '현지 밀착 케어 & 24/7 비상 대응: 현지 전담 매니저 배치, 24시간 긴급 케어, 일정 변동 즉각 대응, 통역 인력 지원',
+    ],
+    imageSrc: sportsMobilityImg,
+  },
+  {
     id: 'mice',
     title: 'MICE & 해외학회·글로벌 심포지엄',
     subtitle: '전문성이 검증된 의학/학술대회 및 산업 엑스포 투어',
@@ -142,37 +161,22 @@ export const CORE_SERVICES: ServiceItem[] = [
     imageSrc: packageTourImg,
   },
   {
-    id: 'corporate-incentive',
-    title: '기업 인센티브 투어 & 맞춤 워크샵',
-    subtitle: '임직원 사기 진작과 결속력을 극대화하는 맞춤형 포상관광 솔루션',
-    category: 'Corporate Incentive & Workshop',
-    badge: '기업 포상관광',
+    id: 'incentive-theme',
+    title: '기업 인센티브 & 시그니처 테마여행',
+    subtitle: '기업 맞춤 포상관광·해외 워크샵 및 품격 있는 문화·예술·미식 탐방 솔루션',
+    category: 'Corporate Incentive & Signature Theme',
+    badge: '인센티브 · 테마',
     description:
-      '기업 및 기관의 임직원 포상관광(Incentive Tour), 해외 우수사원 연수, 전략 워크샵, 글로벌 팀빌딩 행사를 전문 기획합니다. 기업의 목적과 예산에 맞춘 전용 일정, 프리미엄 호텔, 만찬 행사 및 VIP 의전을 원스톱으로 책임집니다.',
+      '기업 및 기관의 임직원 포상관광(Incentive Tour), 해외 우수사원 연수, 전략 워크샵, 글로벌 팀빌딩과 함께 세계 미술관 도슨트, 미식 기행, 아이비리그 명문대 탐방 등 획일적인 패키지를 넘어선 좋은여행사만의 독창적이고 품격 있는 맞춤 테마 여행을 실현합니다.',
     highlights: [
-      '기업 맞춤형 포상관광(Incentive) & 해외 워크샵 전담 기획',
+      '기업 맞춤형 포상관광(Incentive) & 해외 워크샵·글로벌 팀빌딩 전담 기획',
       '전용 단독 차량, 한국인 전문 가이드 & VIP 의전 케어',
-      '갈라 디너, 단독 연회장 대관 및 팀빌딩 프로그램 운영',
-      '법인 맞춤 예산 설계, 세금계산서 발행 및 사후 정산 리포트',
+      '갈라 디너, 단독 연회장 대관 및 단체 맞춤 프로그램 운영',
+      '세계 3대 박물관 및 미술관 도슨트 투어, 미슐랭 식도락 기행 기획',
+      '미국 아이비리그(Ivy League) 및 명문대 탐방 캠프 운영',
+      '법인 맞춤 예산 설계, 세금계산서 일괄 발행 및 사후 정산 리포트',
     ],
     imageSrc: corporateIncentiveImg,
-  },
-  {
-    id: 'theme',
-    title: '시그니처 테마여행 & 버킷리스트 50',
-    subtitle: '단순 관광을 넘어선 품격 있는 문화·미식·예술 탐방',
-    category: 'Signature Theme',
-    badge: '차별화 기획',
-    description:
-      '세계 3대 박물관·미술관 투어, 아이비리그 탐방, 미슐랭 식도락 기행, 유명 인플루언서 동행 위드(WITH) 투어 등 좋은여행사만의 독창적인 테마 여행을 실현합니다.',
-    highlights: [
-      '세계 3대 박물관 및 미술관 도슨트 투어 기획',
-      '세계 식도락 기행 (미슐랭 레스토랑 & 로컬 야시장 탐방)',
-      '미국 아이비리그(Ivy League) 및 명문대 탐방 캠프',
-      '직장인을 위한 주말 밤도깨비 Refresh 투어 (일본/대만/홍콩)',
-      'BBC 선정 죽기 전에 가봐야 할 50곳 버킷리스트 시리즈',
-    ],
-    imageSrc: themeTourImg,
   },
 ];
 
